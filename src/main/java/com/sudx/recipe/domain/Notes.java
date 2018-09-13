@@ -2,6 +2,7 @@ package com.sudx.recipe.domain;
 
 import javax.persistence.*;
 
+@Entity
 public class Notes {
 
     // == Fields ==
