@@ -1,4 +1,4 @@
-package com.sudx.recipe.domain;
+package com.sudx.domain;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -20,6 +20,22 @@ public class Ingredient {
 
     @ManyToOne
     private Recipe recipe;
+
+    //== constructor ==
+
+
+    public Ingredient() {
+    }
+
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.uom = uom;
+        this.recipe = recipe;
+    }
+
+
+    //== getters and setters ==
 
     public long getId() {
         return Id;

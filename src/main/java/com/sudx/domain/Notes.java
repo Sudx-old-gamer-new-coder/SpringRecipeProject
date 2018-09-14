@@ -1,4 +1,4 @@
-package com.sudx.recipe.domain;
+package com.sudx.domain;
 
 import javax.persistence.*;
 

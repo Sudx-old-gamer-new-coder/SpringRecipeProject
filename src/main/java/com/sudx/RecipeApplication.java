@@ -1,4 +1,4 @@
-package com.sudx.recipe;
+package com.sudx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
