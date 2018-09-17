@@ -4,15 +4,18 @@ import com.sudx.domain.*;
 import com.sudx.repositories.CategoryRepository;
 import com.sudx.repositories.RecipeRepository;
 import com.sudx.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -29,11 +32,13 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         recipeRepository.saveAll(getRecipes());
     }
 
     private List<Recipe> getRecipes() {
+        log.debug("creating recipe data");
         List<Recipe> recipes = new ArrayList<>();
 
         Optional<UnitOfMeasure> eachUomOptional = unitOfMeasureRepository.findByDescription("Each");
@@ -215,6 +220,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         tacosRecipe.getCategories().add(mexicanCategory);
 
         recipes.add(tacosRecipe);
+
+        log.debug("Recipe data successfully created.");
 
         return recipes;
 
