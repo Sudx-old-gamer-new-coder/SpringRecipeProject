@@ -103,9 +103,11 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         Recipe guacamoleRecipe = new Recipe();
         guacamoleRecipe.setDescription("Perfect Guacamole");
-        guacamoleRecipe.setCookTime(10);
         guacamoleRecipe.setCookTime(0);
+        guacamoleRecipe.setPrepTime(10);
         guacamoleRecipe.setDifficulty(Difficulty.EASY);
+        guacamoleRecipe.setSource("SimplyRecipes");
+        guacamoleRecipe.setUrl("https://www.simplyrecipes.com/recipes/perfect_guacamole/");
         guacamoleRecipe.setDirections(
                 "1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. (See How to Cut and Peel an Avocado.) Place in a bowl." +
                         "2 Mash with a fork: Using a fork, roughly mash the avocado. (Don't overdo it! The guacamole should be a little chunky.)" +
@@ -157,6 +159,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         tacosRecipe.setPrepTime(20);
         tacosRecipe.setDifficulty(Difficulty.MODERATE);
         tacosRecipe.setServings(6);
+        tacosRecipe.setUrl("https://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/");
+        tacosRecipe.setSource("SimplyRecipes");
 
         tacosRecipe.setDirections(
                 "1 Prepare a gas or charcoal grill for medium-high, direct heat.\n" +

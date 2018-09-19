@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 
 @Data
-@EqualsAndHashCode(exclude = "recipe")
 @Entity
 public class Notes {
 
@@ -17,6 +16,7 @@ public class Notes {
     private long id;
 
     @OneToOne
+    @EqualsAndHashCode.Exclude
     private Recipe recipe;
 
     @Lob  //Binary Large Object
